@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.Items.ConcreteItems;
 
-public class Sword : Weapon
+internal class Sword : Weapon
 {
     public Sword(int itemTypeId, string title, int damage, WeaponCondition condition) 
         : base(itemTypeId, title, condition, damage)

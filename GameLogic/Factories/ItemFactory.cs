@@ -8,7 +8,7 @@ using GameLogic.Items.ConcreteItems;
 
 namespace GameLogic.Factories
 {
-    public static class ItemFactory
+    internal static class ItemFactory
     {
         private static List<Item> _standardItems;
 

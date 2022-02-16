@@ -7,7 +7,7 @@ using GameLogic.Items;
 
 namespace GameLogic
 {
-    public class Player : IPlayer
+    internal class Player : IPlayer
     {
         public int HitPoints { get; set; }
         public bool IsAlive { get; set; }

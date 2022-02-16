@@ -7,7 +7,7 @@ using GameLogic.Items;
 
 namespace GameLogic
 {
-    public class Inventory
+    internal class Inventory
     {
         public List<Item> Items { get; set; }
 

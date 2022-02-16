@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using GameLogic.Items;
 
-namespace GameLogic
+namespace GameLogic.Controllers
 {
-    internal interface IPickUp
+    internal class WeaponController
     {
-        public void PickUp(Item item);
-        public void DropItem(Item item);
+        public Weapon weapon { get; set; }
     }
 }

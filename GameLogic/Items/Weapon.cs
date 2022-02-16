@@ -7,7 +7,7 @@ using GameLogic.Items;
 
 namespace GameLogic.Items;
 
-public abstract class Weapon : Item
+internal abstract class Weapon : Item
 {
     private int _damage;
     public WeaponCondition Condition { get; set; }

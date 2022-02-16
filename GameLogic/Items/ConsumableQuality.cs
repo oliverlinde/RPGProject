@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.Items;
 
-public enum ConsumableQuality
+internal enum ConsumableQuality
 {
     Spoiled,
     Bad,

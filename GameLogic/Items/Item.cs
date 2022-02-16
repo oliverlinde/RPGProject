@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.Items
 {
-    public abstract class Item : IPickUp
+    internal abstract class Item : IPickUp
     {
         public int ItemTypeID { get; set; }
         public string Title { get; set; }

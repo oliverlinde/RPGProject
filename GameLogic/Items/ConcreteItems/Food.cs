@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.Items.ConcreteItems;
 
-public class Food : Consumable
+internal class Food : Consumable
 {
 
     public Food(int itemTypeId, string title, ConsumableQuality consumableQuality, int hitPointsToRestore) : base(title, itemTypeId, consumableQuality, hitPointsToRestore)

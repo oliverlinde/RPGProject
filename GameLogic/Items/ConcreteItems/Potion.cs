@@ -1,6 +1,6 @@
 ﻿namespace GameLogic.Items.ConcreteItems;
 
-public class Potion : Consumable
+internal class Potion : Consumable
 {
 
     public Potion(int itemTypeId, string title, ConsumableQuality consumableQuality, int hitPointsToRestore) : base(title, itemTypeId, consumableQuality, hitPointsToRestore)

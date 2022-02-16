@@ -9,7 +9,7 @@ using GameLogic.Items.ConcreteItems;
 
 namespace GameLogic.Items
 {
-    public abstract class Consumable : Item
+    internal abstract class Consumable : Item
     {
         public ConsumableQuality ConsumableQuality { get; set; }
 

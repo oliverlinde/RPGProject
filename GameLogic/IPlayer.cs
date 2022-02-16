@@ -2,7 +2,7 @@
 
 namespace GameLogic;
 
-public interface IPlayer : IDamageable, IHealable
+internal interface IPlayer : IDamageable, IHealable
 {
     public string Name { get; set; }
     public bool IsAlive { get; set; }

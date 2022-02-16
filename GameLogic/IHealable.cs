@@ -1,6 +1,6 @@
 ﻿namespace GameLogic;
 
-internal interface IHealable
+public interface IHealable
 {
     public void Heal(int amountToHeal);
 }

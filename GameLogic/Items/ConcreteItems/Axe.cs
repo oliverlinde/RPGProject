@@ -1,9 +1,9 @@
 ﻿namespace GameLogic.Items.ConcreteItems;
 
-internal class Axe : Weapon
+public class Axe : Weapon
 {
-    public Axe(int itemTypeId, string title, int damage, WeaponCondition condition) 
-        : base(itemTypeId, title, condition, damage)
+    public Axe(int itemTypeId, string title, int value, int damage, WeaponCondition condition) 
+        : base(itemTypeId, title, value, condition, damage)
     {
     }
 
@@ -14,6 +14,6 @@ internal class Axe : Weapon
 
     public override Item? Clone()
     {
-        return new Axe(ItemTypeID, Title, Damage, Condition);
+        return new Axe(ItemTypeID, Title, Value, Damage, Condition);
     }
 }

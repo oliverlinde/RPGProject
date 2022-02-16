@@ -7,35 +7,51 @@ using GameLogic.Items;
 
 namespace GameLogic.Items;
 
-internal abstract class Weapon : Item
+public abstract class Weapon : Item
 {
     private int _damage;
+    private int _value;
+
     public WeaponCondition Condition { get; set; }
     public int Damage
     {
         get => _damage;
-        set
-        {
-            _damage = Condition switch
-            {
-                WeaponCondition.Broken => (int)(value * 0.1),
-                WeaponCondition.Bad => (int)(value * 0.5),
-                WeaponCondition.Poor => (int)(value * 0.7),
-                WeaponCondition.Fine => (int)(value * 1.3),
-                WeaponCondition.Superior => (int)(value * 1.5),
-                WeaponCondition.Flawless => (int)(value * 2),
-                _ => value * 1,
-            };
-        }
+        set => _damage = (int)(value * GetConditionValue());
     }
 
-    protected Weapon(int itemTypeId, string title, WeaponCondition condition, int damage) 
-        : base(title, itemTypeId)
+    public new int Value
+    {
+        get => _value;
+        set => _value = (int)(value * GetConditionValue());
+        
+    }
+
+    protected Weapon(int itemTypeId, string title, int value, WeaponCondition condition, int damage) 
+        : base(title, itemTypeId, value)
     {
         Condition = condition;
         Damage = damage;
+        Value = value;
+    }
+
+    private double GetConditionValue()
+    {
+        return this.Condition switch
+        {
+            WeaponCondition.Broken => 0.1,
+            WeaponCondition.Bad => 0.5,
+            WeaponCondition.Poor => 0.7,
+            WeaponCondition.Fine => 1.3,
+            WeaponCondition.Superior => 1.5,
+            WeaponCondition.Flawless => 2,
+            _ => 1
+        };
     }
 
     public abstract void Attack(IDamageable playerToAttack);
 
+    public override string printInfo()
+    {
+        return "Weapon: " + Title + Environment.NewLine + "Damage: " + Damage + Environment.NewLine + "Condition: " + Condition;
+    }
 }

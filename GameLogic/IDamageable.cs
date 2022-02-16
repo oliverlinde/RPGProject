@@ -1,6 +1,6 @@
 ﻿namespace GameLogic;
 
-internal interface IDamageable
+public interface IDamageable
 {
     public void TakeDamage(int amount);
 }

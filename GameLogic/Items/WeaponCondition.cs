@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameLogic.Items;
 
-internal enum WeaponCondition
+public enum WeaponCondition
 {
     Broken,
     Bad,

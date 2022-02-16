@@ -8,7 +8,7 @@ using GameLogic.Items.ConcreteItems;
 
 namespace GameLogic.Factories
 {
-    internal static class ItemFactory
+    public static class ItemFactory
     {
         private static List<Item> _standardItems;
 
@@ -17,17 +17,17 @@ namespace GameLogic.Factories
             _standardItems = new List<Item>();
 
             // Weapons
-            _standardItems.Add(new Sword(1001, "Steel Sword", 10, WeaponCondition.Good));
-            _standardItems.Add(new Axe(2001, "Steel Axe", 10, WeaponCondition.Good));
-            _standardItems.Add(new Axe(2002, "Obsidian Axe", 50, WeaponCondition.Good));
+            _standardItems.Add(new Sword(1001, "Steel Sword", 50, 10, WeaponCondition.Good));
+            _standardItems.Add(new Axe(2001, "Steel Axe", 50, 10, WeaponCondition.Good));
+            _standardItems.Add(new Axe(2002, "Obsidian Axe", 100, 50, WeaponCondition.Good));
 
             // Food
-            _standardItems.Add(new Food(101, "Wheat Bread", ConsumableQuality.Good, 5));
-            _standardItems.Add(new Food(102, "Beef Jerky", ConsumableQuality.Good, 15));
+            _standardItems.Add(new Food(101, "Wheat Bread", 5, ConsumableQuality.Good, 5));
+            _standardItems.Add(new Food(102, "Beef Jerky", 15, ConsumableQuality.Good, 15));
 
             // Potions
-            _standardItems.Add(new Potion(201, "Healing Potion", ConsumableQuality.Good, 30));
-            _standardItems.Add(new Potion(202, "Orange Juice", ConsumableQuality.Good, 10));
+            _standardItems.Add(new Potion(201, "Healing Potion", 30, ConsumableQuality.Good, 30));
+            _standardItems.Add(new Potion(202, "Orange Juice", 10, ConsumableQuality.Good, 10));
         }
 
         public static Item? CreateItem(int itemTypeId)

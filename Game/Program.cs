@@ -2,16 +2,13 @@
 using System.Threading.Channels;
 using Game;
 using GameLogic;
+using GameLogic.Controllers;
 using GameLogic.Items;
 using GameLogic.Items.ConcreteItems;
 
 //Player player = new Player(50);
 //Player player2 = new Player(50);
 
-Potion potion = new Potion("Apple juice", 2);
-Food food = new Food("Wheat bread", 5);
-Sword sword = new Sword("Normal Steel Sword", 10, WeaponCondition.Good);
-Axe axe = new Axe("A superior branch", 10, WeaponCondition.Superior);
 
 //player2.AddToInventory(axe);
 //player2.AddToInventory(food);
@@ -35,14 +32,11 @@ Axe axe = new Axe("A superior branch", 10, WeaponCondition.Superior);
 //    Console.WriteLine(item.Title);
 //}
 
-PlayerController p1 = new PlayerController("Lars");
-PlayerController p2 = new PlayerController("Henning");
-p1.AddToInventory(sword);
-p1.AddToInventory(food);
-p1.SetMainHand(sword);
-p2.AddToInventory(axe);
-p2.AddToInventory(food);
-p2.SetMainHand(axe);
 
-p1.Attack(p2.player);
-p2.Attack(p1.player);
+WeaponController weaponController = new WeaponController();
+
+Weapon w1 = weaponController.CloneWeapon(1001);
+Weapon w2 = weaponController.CloneWeapon(1001);
+
+Console.WriteLine("Weapon 1: " + w1.Damage + ", " + w1.Condition.ToString() + ", " + w1.Value);
+Console.WriteLine("Weapon 2: " + w2.Damage + ", " + w2.Condition.ToString() + ", " + w2.Value);

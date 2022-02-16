@@ -1,9 +1,9 @@
 ﻿namespace GameLogic.Items.ConcreteItems;
 
-internal class Food : Consumable
+public class Food : Consumable
 {
 
-    public Food(int itemTypeId, string title, ConsumableQuality consumableQuality, int hitPointsToRestore) : base(title, itemTypeId, consumableQuality, hitPointsToRestore)
+    public Food(int itemTypeId, string title, int value, ConsumableQuality consumableQuality, int hitPointsToRestore) : base(title, itemTypeId, value, consumableQuality, hitPointsToRestore)
     {
         
     }
@@ -15,6 +15,7 @@ internal class Food : Consumable
 
     public override Item? Clone()
     {
-        return new Food(ItemTypeID, Title, ConsumableQuality, HitPointsToRestore);
+        return new Food(ItemTypeID, Title, Value, ConsumableQuality, HitPointsToRestore);
     }
+
 }

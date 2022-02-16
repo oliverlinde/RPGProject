@@ -9,7 +9,7 @@ using GameLogic.Items.ConcreteItems;
 
 namespace GameLogic.Items
 {
-    internal abstract class Consumable : Item
+    public abstract class Consumable : Item
     {
         public ConsumableQuality ConsumableQuality { get; set; }
 
@@ -33,7 +33,7 @@ namespace GameLogic.Items
 
         }
 
-        protected Consumable(string title, int itemTypeId, ConsumableQuality consumableQuality, int hitPointsToRestore) : base(title, itemTypeId)
+        protected Consumable(string title, int itemTypeId, int value, ConsumableQuality consumableQuality, int hitPointsToRestore) : base(title, itemTypeId, value)
         {
             ConsumableQuality = consumableQuality;
             HitPointsToRestore = hitPointsToRestore;
@@ -47,6 +47,10 @@ namespace GameLogic.Items
             {
                 player1.Inventory.RemoveFromInventory(item);
             }
+        }
+        public override string printInfo()
+        {
+            return "Item: " + Title + Environment.NewLine + "Restores: " + HitPointsToRestore + " HP" + Environment.NewLine + "Quality: " + ConsumableQuality;
         }
     }
 }

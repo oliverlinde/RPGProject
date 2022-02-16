@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GameLogic.Items;
 
-namespace GameLogic
+namespace GameLogic.Controllers
 {
-    public interface IPickUp
+    public class ConsumableController
     {
-        public void PickUp(Item item);
+
+        public ConsumableController()
+        {
+
+        }
     }
 }
